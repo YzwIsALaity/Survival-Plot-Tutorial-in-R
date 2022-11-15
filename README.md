@@ -18,7 +18,7 @@ The dataset used for the tutorial includes follow-up time for patients with a sp
 
 ![](https://github.com/YzwIsALaity/Survival-Plot-Tutorial-in-R/blob/cdd019f687706b20a49d042677ca253cd0db7cde/Dataset%20Table.png)
 
-# 2. Kaplan-Meier Curve
+## 2. Kaplan-Meier Curve
 ## (1). Version 1: Basic
 We will draw a basic version of Kaplan-Meier curve with the aim of **`survminer`**. We first need to fit a **Kaplan-Meier estimator** for the cancer `Stage` variable and this will **require `survival` package**. In here, we will implement the following functions:
 
