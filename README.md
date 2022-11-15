@@ -16,6 +16,8 @@ The dataset used for the tutorial includes follow-up time for patients with a sp
 
 -   `Treatment`: this is the **types of treatments that patients took [4 levels: 'Group 1', 'Group 2', 'Group 3', 'Group 4']** (string);
 
+![](https://github.com/YzwIsALaity/Survival-Plot-Tutorial-in-R/blob/cdd019f687706b20a49d042677ca253cd0db7cde/Dataset%20Table.png)
+
 # 2. Kaplan-Meier Curve
 ## (1). Version 1: Basic
 We will draw a basic version of Kaplan-Meier curve with the aim of **`survminer`**. We first need to fit a **Kaplan-Meier estimator** for the cancer `Stage` variable and this will **require `survival` package**. In here, we will implement the following functions:
@@ -54,6 +56,8 @@ ggsurvplot(fit = KM, data = Dt.Plot,   # Kaplan-Meier estimator and dataset
            surv.median.line = 'hv')    # show median survival line 
 ```
 
+![](https://github.com/YzwIsALaity/Survival-Plot-Tutorial-in-R/blob/cdd019f687706b20a49d042677ca253cd0db7cde/Version%201.tiff)
+
 Since the sample size of the dataset is large, the Keplan-Meier curves look smooth and log-rank test shows significance for difference in trends among stages.
 
 ## (2). Version 2: Facet plot
@@ -73,6 +77,8 @@ ggsurvplot(KM2, data = Dt.Plot,
            legend = 'right', 
            legend.labs = c('Stage I', 'Stage II', 'Stage III', 'Stage IV')) # create a self-defined legend label
 ```
+
+![](https://github.com/YzwIsALaity/Survival-Plot-Tutorial-in-R/blob/cdd019f687706b20a49d042677ca253cd0db7cde/Version%202.tiff)
 
 We can a 2-by-2 multi-panel survival plot, grouped by `Treatment` and in each panel, it is stratified by cancer `Stage`. Tests on trends are performed for each panel as well. In the next version, we are going to explore how to the modification of non-graphical argument for survival plots (i.e., font size/family, etc.).
 
@@ -123,6 +129,8 @@ ggsurvplot(KM2, data = Dt.Plot,
            xlab = 'Time (Month)', ylab = 'Survival Probability',            # modify X-axis and Y-axis labels
            ggtheme = Customized.Theme())                                    # use modified non-graphical components
 ```
+
+![](https://github.com/YzwIsALaity/Survival-Plot-Tutorial-in-R/blob/cdd019f687706b20a49d042677ca253cd0db7cde/Version%203.tiff)
 
 Here we go! For other non-graphical components, we can change them in the `Customized.Theme()` and follow arguments in `ggplot2`.
 
